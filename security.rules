@@ -1,0 +1,16 @@
+# Deprecated root copy — use rules/security.rules (safe ends_with expressions).
+# The old "contains .html / .php / .json" expression blocked legitimate public pages.
+# See rules/cloudflare-custom-rule.txt for the full production pack.
+
+(
+  ends_with(http.request.uri.path, ".env")
+  or ends_with(http.request.uri.path, ".bak")
+  or ends_with(http.request.uri.path, ".backup")
+  or ends_with(http.request.uri.path, ".sql")
+  or ends_with(http.request.uri.path, ".log")
+  or ends_with(http.request.uri.path, ".htaccess")
+  or ends_with(http.request.uri.path, ".htpasswd")
+  or http.request.uri.path contains "/.git/"
+  or http.request.uri.path contains "/.env"
+  or http.request.uri.path contains "/wp-config.php"
+)

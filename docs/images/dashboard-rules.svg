@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640">
+  <rect width="1100" height="640" fill="#0a0f14"/>
+  <text x="48" y="56" fill="#e7eef6" font-size="24" font-weight="700" font-family="Georgia, serif">Cloudflare custom rule pack</text>
+  <rect x="48" y="84" width="1004" height="480" rx="16" fill="#121a22" stroke="rgba(143,163,184,0.18)"/>
+  <text x="72" y="120" fill="#f59e0b" font-size="13" font-family="Consolas, monospace"># Action: Block</text>
+  <text x="72" y="150" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">(</text>
+  <text x="88" y="180" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">ends_with(http.request.uri.path, ".env")</text>
+  <text x="88" y="210" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">or ends_with(http.request.uri.path, ".bak")</text>
+  <text x="88" y="240" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">or ends_with(http.request.uri.path, ".sql")</text>
+  <text x="88" y="270" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">or ends_with(http.request.uri.path, ".htaccess")</text>
+  <text x="88" y="300" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">or http.request.uri.path contains "/.git/"</text>
+  <text x="88" y="330" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">or http.request.uri.path contains "/wp-config.php"</text>
+  <text x="88" y="360" fill="#64748b" font-size="14" font-family="Consolas, monospace">/* & full expression in rules/cloudflare-custom-rule.txt */</text>
+  <text x="72" y="400" fill="#cbd5e1" font-size="14" font-family="Consolas, monospace">)</text>
+  <text x="48" y="600" fill="#64748b" font-size="13" font-family="Segoe UI, Arial">Safe ends_with matching  does not blanket-block .html / .php pages</text>
+</svg>
